@@ -5,7 +5,7 @@
       "skills": [
         { "name": "Platform Engineering", "icon": "mdi:server-network" },
         { "name": "DevSecOps", "icon": "mdi:shield-check" },
-        { "name": "CI/CD Pipelines", "icon": "skill-icons:githubactions-dark" },
+        { "name": "CI/CD Pipelines", "icon": "mdi:source-branch-sync" },
         { "name": "Infrastructure as Code", "icon": "devicon-plain:terraform" },
         { "name": "DORA Metrics", "icon": "mdi:chart-line" },
         { "name": "SDLC Governance", "icon": "mdi:gavel" }
@@ -14,10 +14,10 @@
     {
       "title": "Cloud & Architecture",
       "skills": [
-        { "name": "Microsoft Azure", "icon": "skill-icons:azure-dark" },
-        { "name": "Amazon Web Services", "icon": "skill-icons:aws-dark" },
+        { "name": "Microsoft Azure", "icon": "devicon-plain:azure" },
+        { "name": "Amazon Web Services", "icon": "devicon-plain:amazonwebservices" },
         { "name": "Cloud Native Architecture", "icon": "mdi:cloud" },
-        { "name": "System Integration", "icon": "mdi:api" }
+        { "name": "System Integration", "icon": "mdi:connection" }
       ]
     },
     {
