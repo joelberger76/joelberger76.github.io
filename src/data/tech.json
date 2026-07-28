@@ -1,35 +1,63 @@
 {
   "categories": [
     {
-      "title": "Mobile Development",
+      "title": "Platform & DevSecOps",
       "skills": [
-        { "name": "Flutter", "level": 3, "icon": "skill-icons:flutter-dark" },
-        { "name": "Dart", "level": 3, "icon": "skill-icons:dart-dark" },
-        { "name": "Kotlin", "level": 1, "icon": "skill-icons:kotlin-dark" }
+        { "name": "Platform Engineering", "level": 3, "icon": "mdi:server-network" },
+        { "name": "DevSecOps", "level": 3, "icon": "mdi:shield-check" },
+        { "name": "CI/CD Pipelines", "level": 3, "icon": "skill-icons:githubactions-dark" },
+        { "name": "Infrastructure as Code", "level": 2, "icon": "devicon-plain:terraform" },
+        { "name": "DORA Metrics", "level": 3, "icon": "mdi:chart-line" },
+        { "name": "SDLC Governance", "level": 3, "icon": "mdi:gavel" }
       ]
     },
     {
-      "title": "Frontend",
+      "title": "Cloud & Architecture",
       "skills": [
-        { "name": "Astro", "level": 2, "icon": "skill-icons:astro" },
-        { "name": "HTML", "level": 2, "icon": "skill-icons:html" },
-        { "name": "CSS", "level": 2, "icon": "skill-icons:css" },
-        { "name": "Tailwind CSS", "level": 1, "icon": "skill-icons:tailwindcss-dark" }
+        { "name": "Microsoft Azure", "level": 3, "icon": "skill-icons:azure-dark" },
+        { "name": "Amazon Web Services", "level": 2, "icon": "skill-icons:aws-dark" },
+        { "name": "Cloud Native Architecture", "level": 3, "icon": "mdi:cloud" },
+        { "name": "System Integration", "level": 3, "icon": "mdi:api" }
       ]
     },
     {
-      "title": "Backend",
+      "title": "Site Reliability & Observability",
       "skills": [
-        { "name": "FastAPI", "level": 2, "icon": "skill-icons:fastapi" },
-        { "name": "Python", "level": 2, "icon": "skill-icons:python-dark" },
-        { "name": "Firebase", "level": 3, "icon": "vscode-icons:file-type-firebase" }
+        { "name": "Monitoring & Alerting", "level": 3, "icon": "mdi:monitor-eye" },
+        { "name": "Incident Response", "level": 3, "icon": "mdi:alert-decagram" },
+        { "name": "MTTR Reduction", "level": 3, "icon": "mdi:clock-fast" }
       ]
     },
     {
-      "title": "Database",
+      "title": "AI & Quality Engineering",
       "skills": [
-        { "name": "SQLite", "level": 3, "icon": "skill-icons:sqlite" },
-        { "name": "PostgreSQL", "level": 2, "icon": "skill-icons:postgresql-dark" }
+        { "name": "AIDLC", "level": 3, "icon": "mdi:robot" },
+        { "name": "Agentic AI", "level": 3, "icon": "mdi:robot-outline" },
+        { "name": "Generative AI", "level": 3, "icon": "mdi:creation" },
+        { "name": "Quality Engineering", "level": 3, "icon": "mdi:check-decagram" },
+        { "name": "Test Automation", "level": 3, "icon": "mdi:test-tube" },
+        { "name": "Test Data Management", "level": 3, "icon": "mdi:database-cog" }
+      ]
+    },
+    {
+      "title": "Leadership & Strategy",
+      "skills": [
+        { "name": "Executive Leadership", "level": 3, "icon": "mdi:account-tie" },
+        { "name": "Technology Governance", "level": 3, "icon": "mdi:clipboard-check" },
+        { "name": "Agile Methodologies", "level": 3, "icon": "mdi:sync" },
+        { "name": "Digital Strategy", "level": 3, "icon": "mdi:chart-timeline-variant" },
+        { "name": "Vendor Management", "level": 3, "icon": "mdi:handshake" },
+        { "name": "Enterprise Thinking", "level": 3, "icon": "mdi:domain" }
+      ]
+    },
+    {
+      "title": "Delivery Domains",
+      "skills": [
+        { "name": "Web Applications", "level": 3, "icon": "mdi:web" },
+        { "name": "Mobile Applications", "level": 3, "icon": "mdi:cellphone" },
+        { "name": "RESTful APIs", "level": 3, "icon": "mdi:api" },
+        { "name": "Salesforce", "level": 2, "icon": "devicon-plain:salesforce" },
+        { "name": "IT Operations", "level": 3, "icon": "mdi:cog" }
       ]
     }
   ]

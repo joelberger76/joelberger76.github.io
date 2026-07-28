@@ -1,15 +1,15 @@
 {
-  "name": "John Doe",
-  "photoUrl": "favicon.svg",
-  "description": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
-  "descriptionHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-white font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-white font-bold'>efficient</span>, <span class='text-white font-bold'>high-impact</span> solutions.",
-  "webpageTitle": "John Doe | Lead Software Engineer",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
+  "name": "Joel Berger",
+  "photoUrl": "joel-berger.png",
+  "description": "Engineering executive with 26 years leading technology organizations at Nationwide and Bread Financial. Founded and now leads Platform Enablement within Bread Financial's Platform Engineering organization, driving AI-powered software delivery (AIDLC) and modern engineering practices for a public financial services company.",
+  "descriptionHtml": "Engineering executive with <span class='text-white font-bold'>26 years</span> leading technology organizations at Nationwide and Bread Financial. Founded and now leads Platform Enablement within Bread Financial's Platform Engineering organization, driving <span class='text-white font-bold'>AI-powered software delivery (AIDLC)</span> and modern engineering practices for a public financial services company.",
+  "webpageTitle": "Joel Berger | Platform Engineering & AI Executive",
+  "resumeUrl": "/Joel_Berger_Resume.pdf",
 
   "_seo_comment": "SEO fields — update these along with your personal info for best search engine visibility.",
-  "jobTitle": "Lead Software Engineer",
-  "keywords": "John Doe, software engineer, Flutter, FastAPI, mobile development, portfolio",
-  "siteUrl": "https://your-domain.com",
+  "jobTitle": "Senior Director, Platform Engineering",
+  "keywords": "Joel Berger, Platform Engineering, DevSecOps, AIDLC, Generative AI, Agentic AI, Engineering Executive, Bread Financial, Cloud Architecture, Site Reliability",
+  "siteUrl": "https://joelberger76.github.io",
   "lang": "en",
   "twitterHandle": "",
   "ogImageUrl": "/placeholder.jpeg",
@@ -17,64 +17,22 @@
   "_comment": "Add your social links below. Leave the 'url' empty to hide the icon. Set 'showInContact' to true or false to control if it appears in the Contact section.",
   "socials": [
     {
-      "name": "GitHub",
-      "url": "https://github.com/[YOUR_USER_NAME]",
-      "icon": "mdi:github",
-      "showInContact": true
-    },
-    {
       "name": "LinkedIn",
-      "url": "https://linkedin.com/in/[YOUR_USER_NAME]",
+      "url": "https://linkedin.com/in/joeldberger",
       "icon": "mdi:linkedin",
       "showInContact": true
     },
     {
-      "name": "Leetcode",
-      "url": "#",
-      "icon": "devicon-plain:leetcode",
-      "showInContact": false
-    },
-    {
-      "name": "Behance",
-      "url": "#",
-      "icon": "devicon-plain:behance",
-      "showInContact": false
+      "name": "GitHub",
+      "url": "https://github.com/joelberger76",
+      "icon": "mdi:github",
+      "showInContact": true
     },
     {
       "name": "Email",
-      "url": "mailto:your-mail@example.com",
+      "url": "mailto:joelberger@gmail.com",
       "icon": "mdi:email",
       "showInContact": true
-    },
-    {
-      "name": "Whatsapp",
-      "url": "https://wa.me/[YOUR_WHATSAPP_NUMBER]",
-      "icon": "mdi:whatsapp",
-      "showInContact": true
-    },
-    {
-      "name": "Facebook",
-      "url": "#",
-      "icon": "mdi:facebook",
-      "showInContact": false
-    },
-    {
-      "name": "Messenger",
-      "url": "#",
-      "icon": "mdi:facebook-messenger",
-      "showInContact": true
-    },
-    {
-      "name": "Instagram",
-      "url": "#",
-      "icon": "mdi:instagram",
-      "showInContact": false
-    },
-    {
-      "name": "Twitter",
-      "url": "#",
-      "icon": "mdi:twitter",
-      "showInContact": false
     }
   ]
 }

@@ -1,20 +1,56 @@
 [
   {
-    "title": "Awesome Website",
-    "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
-    "images": ["astro-01.webp", "astro-02.jpeg"],
-    "tech": ["Astro", "Tailwind"],
-    "platforms": ["web"],
-    "link": "https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/",
-    "category": "Published Website"
+    "title": "AIDLC: AI-Driven Software Development Lifecycle",
+    "description": "Founded and led Bread Financial's AI-driven software development lifecycle initiative — set the vision and roadmap, built a cross-functional team spanning engineering, risk, cyber, and architecture, and delivered the company's first working proof of concept.",
+    "images": [],
+    "tech": ["Generative AI", "Agentic AI", "Platform Engineering", "Governance"],
+    "platforms": ["domain"],
+    "link": "/Joel_Berger_Resume.pdf",
+    "category": "AI Initiative"
   },
   {
-    "title": "Demo Mobile App",
-    "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
-    "images": ["astro-02.jpeg", "#"],
-    "tech": ["Flutter", "Dart", "REST API"],
-    "platforms": ["apple-ios", "android"],
-    "link": "https://github.com/nbakh16/career-portfolio-template",
-    "category": "Hobby"
+    "title": "GenAI Quality Engineering & Test Data Management Portal",
+    "description": "Directed GenAI-powered Quality Engineering upgrades including automated test case generation, tagging, and selective execution; launched a Test Data Management portal processing hundreds of requests per month.",
+    "images": [],
+    "tech": ["Generative AI", "Test Automation", "Quality Engineering"],
+    "platforms": ["domain"],
+    "link": "/Joel_Berger_Resume.pdf",
+    "category": "Quality Engineering"
+  },
+  {
+    "title": "Mainframe-to-Cloud Migration",
+    "description": "Stabilized and operationalized systems following Bread Financial's largest migration of credit card processing off a mainframe platform to Fiserv and Microsoft Azure, cutting Fiserv transaction volume 20-25% through API caching and circuit breaker patterns.",
+    "images": [],
+    "tech": ["Microsoft Azure", "RESTful APIs", "Site Reliability"],
+    "platforms": ["domain"],
+    "link": "/Joel_Berger_Resume.pdf",
+    "category": "Cloud Migration"
+  },
+  {
+    "title": "BreadFinancial.com & NFLExtraPoints.com Launch",
+    "description": "Led the technical delivery of BreadFinancial.com and NFLExtraPoints.com on a new Adobe Experience Manager platform, anchoring the company's brand transformation and the digital build of its first card program on the American Express network.",
+    "images": [],
+    "tech": ["Adobe Experience Manager", "Web Applications", "Digital Strategy"],
+    "platforms": ["web"],
+    "link": "https://www.breadfinancial.com",
+    "category": "Digital Platform"
+  },
+  {
+    "title": "PartnerPortal",
+    "description": "Led IT delivery of PartnerPortal, Bread Financial's Salesforce-based brand partner platform, growing adoption to over 100 active brands.",
+    "images": [],
+    "tech": ["Salesforce", "System Integration"],
+    "platforms": ["domain"],
+    "link": "/Joel_Berger_Resume.pdf",
+    "category": "Enterprise Platform"
+  },
+  {
+    "title": "Multi-Factor Authentication Rollout",
+    "description": "Spearheaded a $3.5M multi-factor authentication rollout at Nationwide that strengthened security for 1.5M+ online accounts.",
+    "images": [],
+    "tech": ["Identity Management", "Security"],
+    "platforms": ["domain"],
+    "link": "/Joel_Berger_Resume.pdf",
+    "category": "Security Initiative"
   }
 ]
