@@ -35,6 +35,8 @@ There is no test suite, lint script, or CI check beyond the build itself. `npm r
 ## My Preferences
 - Version Control
    - Only commit to the repo when asked.
+   - Work from the develop branch. Check it out if not active before committing.
+   - Do not merge to main from develop unless instructed to do so.
    - When committing, include untracked files.
    - When committing, you should not push to origin until I tell you to.
 - I will run the dev server myself in a separate session with npm run dev. You don't have to start it up yourself.

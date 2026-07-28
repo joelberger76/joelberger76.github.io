@@ -46,19 +46,5 @@
     "type": "Full time job",
     "description": "Progressed through 3 roles over 9 years supporting Nationwide's retirement plans technology, building the technical foundation for a two-decade engineering career.",
     "skills": ["Software Engineering", "IT Architecture"]
-  },
-  {
-    "company": "Bowling Green State University",
-    "role": "Master of Science, Computer Science",
-    "period": "2000",
-    "type": "Education",
-    "skills": []
-  },
-  {
-    "company": "Bowling Green State University",
-    "role": "Bachelor of Science, Computer Science",
-    "period": "1998",
-    "type": "Education",
-    "skills": []
   }
 ]

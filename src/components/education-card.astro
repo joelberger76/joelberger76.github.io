@@ -1,0 +1,21 @@
+---
+interface Props {
+  item: {
+    period: string;
+    degree: string;
+    institution: string;
+  };
+  variant: 'mobile' | 'desktop-left' | 'desktop-right';
+}
+
+const { item, variant } = Astro.props;
+
+const isLeft = variant === 'desktop-left';
+const alignmentClass = isLeft ? "text-right" : "";
+---
+
+<div class={`bg-accent/5 border border-accent/10 p-4 md:p-6 rounded-2xl hover:border-accent/40 transition-all group ${alignmentClass}`}>
+  <span class="font-mono text-xs tracking-widest uppercase text-accent/75">{item.period}</span>
+  <h3 class="text-xl font-heading font-bold text-maintext mt-1">{item.degree}</h3>
+  <p class="text-accent text-sm">{item.institution}</p>
+</div>
