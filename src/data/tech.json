@@ -3,61 +3,61 @@
     {
       "title": "Platform & DevSecOps",
       "skills": [
-        { "name": "Platform Engineering", "level": 3, "icon": "mdi:server-network" },
-        { "name": "DevSecOps", "level": 3, "icon": "mdi:shield-check" },
-        { "name": "CI/CD Pipelines", "level": 3, "icon": "skill-icons:githubactions-dark" },
-        { "name": "Infrastructure as Code", "level": 2, "icon": "devicon-plain:terraform" },
-        { "name": "DORA Metrics", "level": 3, "icon": "mdi:chart-line" },
-        { "name": "SDLC Governance", "level": 3, "icon": "mdi:gavel" }
+        { "name": "Platform Engineering", "icon": "mdi:server-network" },
+        { "name": "DevSecOps", "icon": "mdi:shield-check" },
+        { "name": "CI/CD Pipelines", "icon": "skill-icons:githubactions-dark" },
+        { "name": "Infrastructure as Code", "icon": "devicon-plain:terraform" },
+        { "name": "DORA Metrics", "icon": "mdi:chart-line" },
+        { "name": "SDLC Governance", "icon": "mdi:gavel" }
       ]
     },
     {
       "title": "Cloud & Architecture",
       "skills": [
-        { "name": "Microsoft Azure", "level": 3, "icon": "skill-icons:azure-dark" },
-        { "name": "Amazon Web Services", "level": 2, "icon": "skill-icons:aws-dark" },
-        { "name": "Cloud Native Architecture", "level": 3, "icon": "mdi:cloud" },
-        { "name": "System Integration", "level": 3, "icon": "mdi:api" }
+        { "name": "Microsoft Azure", "icon": "skill-icons:azure-dark" },
+        { "name": "Amazon Web Services", "icon": "skill-icons:aws-dark" },
+        { "name": "Cloud Native Architecture", "icon": "mdi:cloud" },
+        { "name": "System Integration", "icon": "mdi:api" }
       ]
     },
     {
       "title": "Site Reliability & Observability",
       "skills": [
-        { "name": "Monitoring & Alerting", "level": 3, "icon": "mdi:monitor-eye" },
-        { "name": "Incident Response", "level": 3, "icon": "mdi:alert-decagram" },
-        { "name": "MTTR Reduction", "level": 3, "icon": "mdi:clock-fast" }
+        { "name": "Monitoring & Alerting", "icon": "mdi:monitor-eye" },
+        { "name": "Incident Response", "icon": "mdi:alert-decagram" },
+        { "name": "MTTR Reduction", "icon": "mdi:clock-fast" }
       ]
     },
     {
       "title": "AI & Quality Engineering",
       "skills": [
-        { "name": "AIDLC", "level": 3, "icon": "mdi:robot" },
-        { "name": "Agentic AI", "level": 3, "icon": "mdi:robot-outline" },
-        { "name": "Generative AI", "level": 3, "icon": "mdi:creation" },
-        { "name": "Quality Engineering", "level": 3, "icon": "mdi:check-decagram" },
-        { "name": "Test Automation", "level": 3, "icon": "mdi:test-tube" },
-        { "name": "Test Data Management", "level": 3, "icon": "mdi:database-cog" }
+        { "name": "AIDLC", "icon": "mdi:robot" },
+        { "name": "Agentic AI", "icon": "mdi:robot-outline" },
+        { "name": "Generative AI", "icon": "mdi:creation" },
+        { "name": "Quality Engineering", "icon": "mdi:check-decagram" },
+        { "name": "Test Automation", "icon": "mdi:test-tube" },
+        { "name": "Test Data Management", "icon": "mdi:database-cog" }
       ]
     },
     {
       "title": "Leadership & Strategy",
       "skills": [
-        { "name": "Executive Leadership", "level": 3, "icon": "mdi:account-tie" },
-        { "name": "Technology Governance", "level": 3, "icon": "mdi:clipboard-check" },
-        { "name": "Agile Methodologies", "level": 3, "icon": "mdi:sync" },
-        { "name": "Digital Strategy", "level": 3, "icon": "mdi:chart-timeline-variant" },
-        { "name": "Vendor Management", "level": 3, "icon": "mdi:handshake" },
-        { "name": "Enterprise Thinking", "level": 3, "icon": "mdi:domain" }
+        { "name": "Executive Leadership", "icon": "mdi:account-tie" },
+        { "name": "Technology Governance", "icon": "mdi:clipboard-check" },
+        { "name": "Agile Methodologies", "icon": "mdi:sync" },
+        { "name": "Digital Strategy", "icon": "mdi:chart-timeline-variant" },
+        { "name": "Vendor Management", "icon": "mdi:handshake" },
+        { "name": "Enterprise Thinking", "icon": "mdi:domain" }
       ]
     },
     {
       "title": "Delivery Domains",
       "skills": [
-        { "name": "Web Applications", "level": 3, "icon": "mdi:web" },
-        { "name": "Mobile Applications", "level": 3, "icon": "mdi:cellphone" },
-        { "name": "RESTful APIs", "level": 3, "icon": "mdi:api" },
-        { "name": "Salesforce", "level": 2, "icon": "devicon-plain:salesforce" },
-        { "name": "IT Operations", "level": 3, "icon": "mdi:cog" }
+        { "name": "Web Applications", "icon": "mdi:web" },
+        { "name": "Mobile Applications", "icon": "mdi:cellphone" },
+        { "name": "RESTful APIs", "icon": "mdi:api" },
+        { "name": "Salesforce", "icon": "devicon-plain:salesforce" },
+        { "name": "IT Operations", "icon": "mdi:cog" }
       ]
     }
   ]

@@ -31,3 +31,11 @@ There is no test suite, lint script, or CI check beyond the build itself. `npm r
 **SEO/meta is centralized in `Layout.astro`**, driven entirely by props threaded from `home.json` (or the fetched equivalent): canonical URL, Open Graph/Twitter tags, and a JSON-LD `Person` schema built from the `socials` array (entries with empty/`#` URLs are excluded from `sameAs`). `siteUrl` can be overridden at build time by the `SITE_URL` env var (see `astro.config.mjs`), which takes precedence over `home.json`'s `siteUrl` — this matters for CI/CD deployments where the domain is injected as a secret rather than committed.
 
 **Env vars** (see `.env.example`): `SITE_URL` (override the canonical/OG domain at build time) works as documented. The live-backend var does not: `.env.example` documents `PUBLIC_API_URL`, but `index.astro` actually reads `import.meta.env.PUBLIC_API_BASE_URL` — a naming mismatch in the current code. If you're touching the fetch/fallback logic, reconcile these rather than assuming either file is authoritative. Neither var is required — the site works fully from local JSON with no env vars set.
+
+## My Preferences
+- Version Control
+   - Only commit to the repo when asked.
+   - When committing, include untracked files.
+   - When committing, you should not push to origin until I tell you to.
+- I will run the dev server myself in a separate session with npm run dev. You don't have to start it up yourself.
+- I store our shared to-do list in TODO.md
