@@ -21,14 +21,6 @@
       ]
     },
     {
-      "title": "Site Reliability & Observability",
-      "skills": [
-        { "name": "Monitoring & Alerting", "icon": "mdi:monitor-eye" },
-        { "name": "Incident Response", "icon": "mdi:alert-decagram" },
-        { "name": "MTTR Reduction", "icon": "mdi:clock-fast" }
-      ]
-    },
-    {
       "title": "AI & Quality Engineering",
       "skills": [
         { "name": "AIDLC", "icon": "mdi:robot" },
@@ -37,6 +29,14 @@
         { "name": "Quality Engineering", "icon": "mdi:check-decagram" },
         { "name": "Test Automation", "icon": "mdi:test-tube" },
         { "name": "Test Data Management", "icon": "mdi:database-cog" }
+      ]
+    },
+    {
+      "title": "Site Reliability & Observability",
+      "skills": [
+        { "name": "Monitoring & Alerting", "icon": "mdi:monitor-eye" },
+        { "name": "Incident Response", "icon": "mdi:alert-decagram" },
+        { "name": "MTTR Reduction", "icon": "mdi:clock-fast" }
       ]
     },
     {
