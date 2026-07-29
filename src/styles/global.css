@@ -113,6 +113,14 @@
 
 
   /* Core Element Styles */
+  html {
+    /* Safari auto-shrinks text inside constrained flex/grid boxes
+       (e.g. the Core Competencies skill-cards) unless this is set;
+       Chrome doesn't do this, which is why it only showed up there. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
   *::selection {
     @apply bg-accent text-background;
   }
