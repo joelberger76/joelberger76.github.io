@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import localTechData from '../data/tech.json';
+import localSkillsData from '../data/skills.json';
 
 interface Skill {
   name: string;
@@ -17,20 +17,20 @@ let categories: Category[];
 
 try {
   if (BASE_URL) {
-    const response = await fetch(`${BASE_URL}/tech`);
+    const response = await fetch(`${BASE_URL}/skills`);
     const data = await response.json();
     categories = data.categories;
   } else {
-    categories = localTechData.categories;
+    categories = localSkillsData.categories;
   }
 } catch {
-  categories = localTechData.categories;
+  categories = localSkillsData.categories;
 }
 ---
 
-<section id="tech" class="section-container overflow-hidden">
+<section id="skills" class="section-container overflow-hidden">
   <div class="container mx-auto">
-    <div class="tech-header mb-16">
+    <div class="skills-header mb-16">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
         <span class="text-accent">/</span> Core Competencies
       </h2>
@@ -68,7 +68,7 @@ try {
 
 <style>
   /* Header Initial State */
-  .tech-header {
+  .skills-header {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -81,7 +81,7 @@ try {
   }
 
   /* Shared Revealed state */
-  .tech-header.reveal,
+  .skills-header.reveal,
   .skill-card.reveal {
     opacity: 1 !important;
     transform: translateY(0) scale(1);
@@ -90,7 +90,7 @@ try {
 
 <script>
   function revealSkills() {
-    const header = document.querySelector('.tech-header');
+    const header = document.querySelector('.skills-header');
     const cards = document.querySelectorAll('.skill-card');
     
     const observer = new IntersectionObserver((entries) => {
@@ -99,7 +99,7 @@ try {
           const target = entry.target;
           
           // Check if the intersecting element is the header
-          if (target.classList.contains('tech-header')) {
+          if (target.classList.contains('skills-header')) {
             target.classList.add('reveal');
             observer.unobserve(target);
           }
