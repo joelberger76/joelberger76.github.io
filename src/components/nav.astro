@@ -252,6 +252,21 @@ const navItems: NavItem[] = [
     naturalWidth = measureNavWidth();
   });
 
+  // The very first measurement above runs as soon as this script
+  // executes, which can be before stylesheets/fonts have actually
+  // been applied (more likely over a real network, e.g. GitHub
+  // Pages, than on localhost). A stale/incorrect measurement then
+  // never gets corrected since it's only otherwise re-run on resize.
+  // Re-measure once things are guaranteed to have settled.
+  window.addEventListener("load", () => {
+    naturalWidth = measureNavWidth();
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      naturalWidth = measureNavWidth();
+    });
+  }
+
   function updateNav() {
     const currentScrollY = window.scrollY;
 
