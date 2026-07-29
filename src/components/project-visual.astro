@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<div class="project-visual absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden bg-gradient-to-br from-accent/5 via-accent/[0.02] to-background">
+  <div class="project-visual-pattern absolute inset-0"></div>
+  <Icon
+    name={icon}
+    class="relative w-20 h-20 md:w-24 md:h-24 text-accent/50 group-hover:text-accent/70 group-hover:scale-110 transition-all duration-500"
+  />
+</div>
+
+<style>
+  .project-visual-pattern {
+    background-image: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 50%, transparent) 1px, transparent 1px);
+    background-size: 22px 22px;
+    opacity: 0.12;
+  }
+</style>

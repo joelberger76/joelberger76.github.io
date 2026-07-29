@@ -33,6 +33,8 @@ There is no test suite, lint script, or CI check beyond the build itself. `npm r
 **Env vars** (see `.env.example`): `SITE_URL` (override the canonical/OG domain at build time) works as documented. The live-backend var does not: `.env.example` documents `PUBLIC_API_URL`, but `index.astro` actually reads `import.meta.env.PUBLIC_API_BASE_URL` — a naming mismatch in the current code. If you're touching the fetch/fallback logic, reconcile these rather than assuming either file is authoritative. Neither var is required — the site works fully from local JSON with no env vars set.
 
 ## My Preferences
+- Writing style
+   - Don't use em dashes in any written copy (site content, commit messages, etc.). Use a comma, period, or restructure the sentence instead.
 - Version Control
    - Only commit to the repo when asked.
    - Work from the develop branch. Check it out if not active before committing.

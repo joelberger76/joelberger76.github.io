@@ -234,6 +234,24 @@ const navItems: NavItem[] = [
   let lastScrollY = window.scrollY;
   let rafId: number | null = null;
 
+  // Measure the nav's natural (un-shrunk) width so it never gets
+  // squeezed narrower than its content actually needs.
+  const navWidthBuffer = 48;
+
+  function measureNavWidth(): number {
+    if (!nav) return 620;
+    const prevWidth = nav.style.width;
+    nav.style.width = "auto";
+    const width = nav.scrollWidth + navWidthBuffer;
+    nav.style.width = prevWidth;
+    return width;
+  }
+
+  let naturalWidth = measureNavWidth();
+  window.addEventListener("resize", () => {
+    naturalWidth = measureNavWidth();
+  });
+
   function updateNav() {
     const currentScrollY = window.scrollY;
 
@@ -243,7 +261,7 @@ const navItems: NavItem[] = [
       const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
       const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
 
-      const minWidth = 620;
+      const minWidth = Math.max(620, naturalWidth);
       const maxWidth = window.innerWidth * 0.8;
       const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
 
