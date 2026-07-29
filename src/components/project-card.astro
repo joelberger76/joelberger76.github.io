@@ -129,6 +129,14 @@ const isSlider = validImages.length > 1;
   initReadMore();
   document.addEventListener('astro:after-swap', initReadMore);
 
+  // Web fonts (Inter Variable) can finish loading after the initial check
+  // above runs, causing text to re-wrap and change line count. Re-check
+  // once fonts are confirmed loaded so a slow/cold font load doesn't leave
+  // a truncated description without its "Show more" button.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(checkDescriptionTruncation);
+  }
+
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
