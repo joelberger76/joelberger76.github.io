@@ -89,28 +89,14 @@ const profileImage = await resolveAssetImage(photoUrl);
       target="_blank" 
       rel="noopener noreferrer"
       class="group relative inline-flex items-center justify-center px-10 py-2 bg-white/5 border border-white/10 rounded-full text-maintext font-body transition-all duration-300
-
-             <!-- /* Mobile: Always active */ -->
              border-accent/50 bg-accent/10 shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)]
-             
-             <!-- /* Desktop: Reset and hover */ -->
-             md:border-accent/50 md:bg-accent/10 md:shadow-none md:hover:border-accent/50 md:hover:bg-accent/10 md:hover:shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)] 
+             md:border-accent/50 md:bg-accent/10 md:shadow-none md:hover:border-accent/50 md:hover:bg-accent/10 md:hover:shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)]
              hover:scale-105"
     >
-      <div class="flex flex-col items-center justify-center text-center">
-        <span class="tracking-wide text-sm md:text-base font-medium transition-transform duration-300 md:translate-y-2 md:group-hover:translate-y-0">
-          View Resume
-        </span>
-        
-        <span class="text-[10px] text-subtext font-light whitespace-nowrap transition-all duration-300 
-                     /* Mobile: Always visible */
-                     opacity-100 translate-y-0 
-                     /* Desktop: Hidden until hover */
-                     md:opacity-0 md:translate-y-1 md:group-hover:opacity-100 md:group-hover:translate-y-0">
-          Downloads PDF file
-        </span>
-      </div>
-      
+      <span class="tracking-wide text-sm md:text-base font-medium">
+        View Resume
+      </span>
+
       <div class="absolute inset-0 rounded-full blur-md bg-accent/20 -z-10 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
     </a>
 </div>
