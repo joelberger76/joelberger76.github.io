@@ -329,23 +329,43 @@ const navItems: NavItem[] = [
     });
   });
 
-  //highlight section by observing visible one on the screen by 50%
+  //highlight section by tracking which one crosses a thin band at viewport center
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("nav a[href^='#']");
-    const observerOptions = { threshold: 0.5 };
+
+    // A section may be shorter or taller than the viewport, so requiring
+    // a fixed percentage of its area to be visible (the old `threshold: 0.5`
+    // approach) can fail to ever trigger, leaving a stale active link.
+    // Instead, treat a thin horizontal band at the vertical center of the
+    // viewport as the "active" line, and mark whichever section crosses it.
+    const observerOptions = {
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
+    };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navLinks.forEach((link) => link.classList.remove("active"));
-          const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-          if (activeLink) {
-            activeLink.classList.add("active");
-          }
-        }
+      const visible = entries.filter((entry) => entry.isIntersecting);
+      if (visible.length === 0) return;
+
+      const viewportCenter = window.innerHeight / 2;
+      const closest = visible.reduce((best, entry) => {
+        const bestCenter =
+          best.boundingClientRect.top + best.boundingClientRect.height / 2;
+        const entryCenter =
+          entry.boundingClientRect.top + entry.boundingClientRect.height / 2;
+        return Math.abs(entryCenter - viewportCenter) <
+          Math.abs(bestCenter - viewportCenter)
+          ? entry
+          : best;
       });
+
+      const id = closest.target.getAttribute("id");
+      navLinks.forEach((link) => link.classList.remove("active"));
+      const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
     };
 
     const observer = new IntersectionObserver(
