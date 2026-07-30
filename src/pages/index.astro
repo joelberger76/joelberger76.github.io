@@ -26,6 +26,7 @@ interface ProfileData {
   twitterHandle?: string;
   ogImageUrl?: string;
   lang?: string;
+  goatCounterUrl?: string;
   socials: Social[];
 }
 
@@ -57,6 +58,7 @@ const {
   twitterHandle,
   ogImageUrl,
   lang,
+  goatCounterUrl,
   socials,
 } = data;
 ---
@@ -71,6 +73,7 @@ const {
   twitterHandle={twitterHandle}
   ogImageUrl={ogImageUrl}
   lang={lang}
+  goatCounterUrl={goatCounterUrl}
   socials={socials}
 >
   <Nav />
