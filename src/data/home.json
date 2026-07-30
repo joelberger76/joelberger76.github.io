@@ -14,6 +14,9 @@
   "twitterHandle": "",
   "ogImageUrl": "/og-image.jpg",
 
+  "_analytics_comment": "GoatCounter analytics URL, leave empty to disable. Only loads in production builds.",
+  "goatCounterUrl": "https://joelberger.goatcounter.com",
+
   "_comment": "Add your social links below. Leave the 'url' empty to hide the icon. Set 'showInContact' to true or false to control if it appears in the Contact section.",
   "socials": [
     {

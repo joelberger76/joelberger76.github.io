@@ -12,6 +12,7 @@ interface Props {
   personName?: string;
   jobTitle?: string;
   lang?: string;
+  goatCounterUrl?: string;
   socials?: { name: string; url: string }[];
 }
 
@@ -25,6 +26,7 @@ const {
   personName = '',
   jobTitle = '',
   lang = 'en',
+  goatCounterUrl = '',
   socials = [],
 } = Astro.props;
 
@@ -98,6 +100,15 @@ const ogLocale = lang.includes('_') ? lang : `${lang}_${lang.toUpperCase()}`;
 
     <!-- JSON-LD STRUCTURED DATA -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- GOATCOUNTER ANALYTICS (production only) -->
+    {import.meta.env.PROD && goatCounterUrl && (
+      <script
+        data-goatcounter={`${goatCounterUrl.replace(/\/$/, '')}/count`}
+        async
+        src="https://gc.zgo.at/count.js"
+      />
+    )}
 
     <!-- THEME TOGGLE SCRIPT -->
     <script is:inline define:vars={{ baseTheme, defaultTheme }}>
