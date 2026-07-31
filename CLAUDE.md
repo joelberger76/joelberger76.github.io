@@ -42,4 +42,4 @@ There is no test suite, lint script, or CI check beyond the build itself. `npm r
    - When committing, include untracked files.
    - When committing, you should not push to origin until I tell you to.
 - I will run the dev server myself in a separate session with npm run dev. You don't have to start it up yourself.
-- I store our shared to-do list in TODO.md
+- I store our shared to-do list in TODO.md. Please create it if it doesn't exist already. To-dos should be deleted once complete, but only after I confirm this is ok.
