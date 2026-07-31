@@ -51,7 +51,7 @@ const navItems: NavItem[] = [
   >
     <div class="container mx-auto flex justify-center items-center p-3 reveal-content" style="animation-delay: 700ms;">
       <ul
-        class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-1"
+        class="flex w-full justify-between md:justify-center md:gap-12 gap-1"
       >
         {
           navItems.map((item) => (
@@ -250,6 +250,7 @@ const navItems: NavItem[] = [
   let naturalWidth = measureNavWidth();
   window.addEventListener("resize", () => {
     naturalWidth = measureNavWidth();
+    updateNav();
   });
 
   // The very first measurement above runs as soon as this script
@@ -260,15 +261,18 @@ const navItems: NavItem[] = [
   // Re-measure once things are guaranteed to have settled.
   window.addEventListener("load", () => {
     naturalWidth = measureNavWidth();
+    updateNav();
   });
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(() => {
       naturalWidth = measureNavWidth();
+      updateNav();
     });
   }
 
   function updateNav() {
     const currentScrollY = window.scrollY;
+    const minWidth = Math.max(620, naturalWidth);
 
     if (currentScrollY > 0) {
       nav?.classList.add("scrolling");
@@ -276,16 +280,25 @@ const navItems: NavItem[] = [
       const scrollProgress = Math.min(window.scrollY / maxScroll, 1);
       const easeProgress = 1 - Math.pow(1 - scrollProgress, 4);
 
-      const minWidth = Math.max(620, naturalWidth);
       const maxWidth = window.innerWidth * 0.8;
       const currentWidth = maxWidth - (maxWidth - minWidth) * easeProgress;
 
       if (window.innerWidth >= 768) {
-        nav?.style.setProperty("width", `${currentWidth}px`);
+        nav?.style.setProperty("width", `${Math.max(currentWidth, minWidth)}px`);
       }
     } else {
       nav?.classList.remove("scrolling");
-      // nav?.style.setProperty("width", "80%");
+
+      // The resting nav is normally 80% of the viewport, but between
+      // roughly 768-900px that's narrower than the nav's own content
+      // (full text labels + gaps switch on at md before 80% of the
+      // viewport catches up), which let labels spill out and overlap
+      // the theme toggle. Never let it sit narrower than its content.
+      if (window.innerWidth >= 768) {
+        nav?.style.setProperty("width", `${Math.max(window.innerWidth * 0.8, minWidth)}px`);
+      } else {
+        nav?.style.removeProperty("width");
+      }
     }
     if (window.innerWidth < 768) {
       // Small buffer (e.g. 10px) to prevent accidental hiding on "jittery" scrolls
@@ -303,6 +316,10 @@ const navItems: NavItem[] = [
     lastScrollY = currentScrollY;
     rafId = null;
   }
+
+  // Apply the resting-width fix immediately, without waiting for the
+  // first scroll/resize/load event.
+  updateNav();
 
   window.addEventListener(
     "scroll",
