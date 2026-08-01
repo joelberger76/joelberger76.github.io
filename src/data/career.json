@@ -11,19 +11,37 @@
     "company": "Bread Financial",
     "role": "Senior Director, Engineering",
     "department": "Servicing Engineering",
-    "period": "Sep 2022 - Sep 2024",
+    "period": "Nov 2023 - Sep 2024",
     "type": "Full time job",
-    "description": "Built and led the Customer/Account engineering domain behind Bread Financial's Azure-based servicing APIs. Stabilized systems following the company's largest mainframe-to-cloud migration, cut Fiserv transaction volume 20-25% through API caching and circuit breakers, and retired 125+ servers for $1.5M+ in annual savings.",
-    "skills": ["Microsoft Azure", "RESTful APIs", "Site Reliability", "Incident Response", "MTTR Reduction"]
+    "description": "Promoted from Director, Engineering within the same team. Drove additional availability gains through blue-green deployments, horizontal scaling, and database connection pool optimization. Retired 125+ servers for $1.5M+ in annual savings through an evergreen API optimization program, and established end-to-end monitoring and alerting between Azure and ServiceNow to improve MTTR.",
+    "skills": ["Microsoft Azure", "Site Reliability", "Incident Response", "MTTR Reduction"]
+  },
+  {
+    "company": "Bread Financial",
+    "role": "Director, Engineering",
+    "department": "Servicing Engineering",
+    "period": "Sep 2022 - Nov 2023",
+    "type": "Full time job",
+    "description": "Built and led the Customer/Account engineering domain behind Bread Financial's Azure-based servicing APIs. Stabilized systems following the company's largest mainframe-to-cloud migration and cut Fiserv transaction volume 20-25% through API caching and circuit breakers.",
+    "skills": ["Microsoft Azure", "RESTful APIs", "Site Reliability", "Incident Response"]
   },
   {
     "company": "Bread Financial",
     "role": "Director, Engineering",
     "department": "Digital Technology and Enterprise Integration",
-    "period": "Aug 2016 - Sep 2022",
+    "period": "Apr 2021 - Sep 2022",
     "type": "Full time job",
-    "description": "Grew from leading an $8M Salesforce and Mobile portfolio to running Bread Financial's full Digital Technology Office across Web, Mobile, and Salesforce engineering. Directed digital delivery for the NFL and AAA partner launches and the company's first American Express card program, doubling mobile adoption while cutting go-to-market time from 7 months to 7 weeks.",
-    "skills": ["Web Applications", "Mobile Applications", "Salesforce", "Agile Methodologies", "Vendor Management"]
+    "description": "Promoted from Senior Manager, Applications to lead the company's full Digital Technology Office across Web, Mobile, and Salesforce engineering. Directed digital delivery for the NFL and AAA partner launches and the company's first American Express card program. Delivered the Account Center Redesign, Universal Authentication, and Mobile First programs.",
+    "skills": ["Web Applications", "Mobile Applications", "Salesforce", "Agile Methodologies"]
+  },
+  {
+    "company": "Bread Financial",
+    "role": "Senior Manager, Applications",
+    "department": "Digital Technology and Enterprise Integration",
+    "period": "Aug 2016 - Apr 2021",
+    "type": "Full time job",
+    "description": "Led an $8M Salesforce and Mobile applications portfolio of 56 associates. Doubled mobile adoption while cutting go-to-market time from 7 months to 7 weeks. Led IT delivery of PartnerPortal, growing adoption to over 100 active brands.",
+    "skills": ["Mobile Applications", "Salesforce", "Agile Methodologies", "Vendor Management"]
   },
   {
     "company": "Nationwide",
@@ -31,7 +49,7 @@
     "department": "Direct Growth Solutions",
     "period": "Aug 2012 - Aug 2016",
     "type": "Full time job",
-    "description": "Led a $7.6M Identity Management and Mobile applications portfolio across 2 agile teams and 32 associates. Spearheaded a $3.5M multi-factor authentication rollout securing 1.5M+ online accounts and directed a responsive redesign of Nationwide.com that grew site traffic 25%.",
+    "description": "Led a $7.6M Identity Management and Mobile applications portfolio across 2 agile teams and 32 associates. Spearheaded a $3.5M multi-factor authentication rollout securing 1.5M+ online accounts and directed a responsive redesign of Nationwide.com that grew site traffic 25%. Built a university hiring partnership with Bowling Green State University that became a company standard.",
     "skills": ["Identity Management", "Mobile Applications", "Agile Methodologies", "Team Leadership"]
   },
   {
