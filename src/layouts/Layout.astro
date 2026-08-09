@@ -42,20 +42,33 @@ const ogImage = ogImageUrl
     ? new URL(ogImageUrl, resolvedSiteUrl || Astro.url.origin).href
     : '';
 
-// JSON-LD Person schema
+// JSON-LD Structured Data (WebSite + Person)
 const sameAsUrls = socials
   .filter((s) => s.url && s.url !== '#' && s.url !== '')
   .map((s) => s.url);
 
+const siteName = personName || title;
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: personName || title,
-  ...(jobTitle ? { jobTitle } : {}),
-  ...(canonicalUrl ? { url: canonicalUrl } : {}),
-  ...(ogImage ? { image: ogImage } : {}),
-  ...(description ? { description } : {}),
-  ...(sameAsUrls.length ? { sameAs: sameAsUrls } : {}),
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${canonicalUrl || resolvedSiteUrl}#website`,
+      name: siteName,
+      url: canonicalUrl || resolvedSiteUrl,
+    },
+    {
+      '@type': 'Person',
+      '@id': `${canonicalUrl || resolvedSiteUrl}#person`,
+      name: siteName,
+      ...(jobTitle ? { jobTitle } : {}),
+      ...(canonicalUrl ? { url: canonicalUrl } : {}),
+      ...(ogImage ? { image: ogImage } : {}),
+      ...(description ? { description } : {}),
+      ...(sameAsUrls.length ? { sameAs: sameAsUrls } : {}),
+    },
+  ],
 };
 
 // 'en' -> 'en_US'
@@ -111,14 +124,23 @@ const ogLocale = lang.includes('_') ? lang : `${lang}_${lang.toUpperCase()}`;
     )}
 
     <!-- THEME TOGGLE SCRIPT -->
+    <meta name="theme-color" content="#000000" id="theme-color-meta" />
     <script is:inline define:vars={{ baseTheme, defaultTheme }}>
       const savedTheme = localStorage.getItem('theme');
+      let activeTheme = defaultTheme;
 
       if (savedTheme && savedTheme.startsWith(baseTheme)) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else {
-        document.documentElement.setAttribute('data-theme', defaultTheme);
-        localStorage.setItem('theme', defaultTheme);
+        activeTheme = savedTheme;
+      }
+
+      document.documentElement.setAttribute('data-theme', activeTheme);
+      localStorage.setItem('theme', activeTheme);
+
+      // Set mobile status bar mode
+      const isDark = activeTheme.endsWith('-dark');
+      const meta = document.getElementById('theme-color-meta');
+      if (meta) {
+        meta.setAttribute('content', isDark ? '#000000' : '#FFFFFF');
       }
     </script>
 

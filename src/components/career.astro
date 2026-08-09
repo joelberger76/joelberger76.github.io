@@ -1,7 +1,11 @@
 ---
 // Import your data and the new component at the top of the file
+import { Icon } from 'astro-icon/components';
 import careerData from '../data/career.json';
 import CareerCard from './career-card.astro';
+
+const VISIBLE_LIMIT = 4;
+const hasOverflow = careerData.length > VISIBLE_LIMIT;
 ---
 
 <section id="career" class="section-container max-w-6xl mx-auto overflow-hidden">
@@ -19,14 +23,14 @@ import CareerCard from './career-card.astro';
       {/* Mobile View */}
       <div class="md:hidden space-y-8">
         {careerData.map((item, index) => (
-          <div class="scroll-stat relative pl-6">
+          <div class={`scroll-stat relative pl-6 ${index >= VISIBLE_LIMIT ? 'hidden-by-limit' : ''}`} data-index={index}>
             {/* Dot for mobile view*/}
             <div class="absolute left-0 top-1 z-10">
-              <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a] 
+              <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a]
                           ${index === 0 ? 'bg-accent shadow-[0_0_15px_var(--color-accent)] animate-pulse' : 'bg-accent/50'}`}>
               </div>
             </div>
-            
+
             <CareerCard item={item} variant="mobile" />
           </div>
         ))}
@@ -35,10 +39,10 @@ import CareerCard from './career-card.astro';
       {/* Desktop View */}
       <div class="hidden md:block space-y-4">
         {careerData.map((item, index) => (
-          <div class="scroll-stat relative grid grid-cols-2">
+          <div class={`scroll-stat relative grid grid-cols-2 ${index >= VISIBLE_LIMIT ? 'hidden-by-limit' : ''}`} data-index={index}>
             {/* Center Dot */}
             <div class="absolute left-1/2 -translate-x-1/2 top-1 z-10">
-              <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a] 
+              <div class={`w-4 h-4 rounded-full border-4 border-[#0a0a0a]
                           ${index === 0 ? 'bg-accent shadow-[0_0_15px_var(--color-accent)] animate-pulse' : 'bg-accent/50'}`}>
               </div>
             </div>
@@ -59,6 +63,18 @@ import CareerCard from './career-card.astro';
           </div>
         ))}
       </div>
+
+      {hasOverflow && (
+        <div id="career-see-more-wrap" class="relative -mt-4 pt-16">
+          <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+          <div class="relative flex justify-center">
+            <button id="career-see-more-btn" class="career-see-more-btn">
+              See More
+              <Icon name="mdi:chevron-down" class="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   </div>
 </section>
@@ -90,6 +106,33 @@ import CareerCard from './career-card.astro';
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
+  .scroll-stat.hidden-by-limit {
+    display: none !important;
+  }
+
+  .career-see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+    color: var(--color-accent);
+    background: var(--color-background);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .career-see-more-btn:hover {
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
 </style>
 
 <script>
@@ -116,9 +159,25 @@ import CareerCard from './career-card.astro';
     cards.forEach(card => observer.observe(card));
   }
 
+  function initSeeMore() {
+    const wrap = document.getElementById('career-see-more-wrap');
+    const btn = document.getElementById('career-see-more-btn');
+    if (!wrap || !btn) return;
+
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.scroll-stat.hidden-by-limit').forEach((card) => {
+        card.classList.remove('hidden-by-limit');
+        card.classList.add('reveal');
+      });
+      wrap.remove();
+    });
+  }
+
   // Runs on initial load
   revealCards();
-  
+  initSeeMore();
+
   // Necessary for Astro View Transitions if you use them
   document.addEventListener('astro:after-swap', revealCards);
+  document.addEventListener('astro:after-swap', initSeeMore);
 </script>
