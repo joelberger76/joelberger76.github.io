@@ -92,7 +92,9 @@ try {
   function revealSkills() {
     const header = document.querySelector('.skills-header');
     const cards = document.querySelectorAll('.skill-card');
-    
+    const cardIndexMap = new Map<Element, number>();
+    cards.forEach((card, i) => cardIndexMap.set(card, i));
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -106,7 +108,7 @@ try {
           // Check if the intersecting element is a skill card
           else if (target.classList.contains('skill-card')) {
             // Add a slight delay based on the card's position to create a wave effect
-            const index = Array.from(cards).indexOf(target);
+            const index = cardIndexMap.get(target) ?? 0;
             setTimeout(() => {
               target.classList.add('reveal');
             }, (index % 6) * 50); // Delay resets every row for a clean staggered look
