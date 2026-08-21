@@ -106,9 +106,14 @@ const platformIconMap: Record<string, string> = {
 </div>
 
 <script>
+  const activeSliderIntervals: ReturnType<typeof setInterval>[] = [];
+
   function initSliders() {
+    activeSliderIntervals.forEach(clearInterval);
+    activeSliderIntervals.length = 0;
+
     const sliders = document.querySelectorAll('.image-slider');
-    
+
     sliders.forEach(slider => {
       const images = slider.querySelectorAll('img');
       if (images.length <= 1) return;
@@ -117,7 +122,7 @@ const platformIconMap: Record<string, string> = {
       const dots = card ? card.querySelectorAll('.slider-dot') : [];
 
       let currentIndex = 0;
-      setInterval(() => {
+      const id = setInterval(() => {
         // Hide current
         images[currentIndex].classList.remove('opacity-100', 'z-0');
         images[currentIndex].classList.add('opacity-0', 'z-[-1]');
@@ -137,6 +142,8 @@ const platformIconMap: Record<string, string> = {
           dots[currentIndex].classList.add('w-4', 'bg-white');
         }
       }, 3500);
+
+      activeSliderIntervals.push(id);
     });
   }
 
