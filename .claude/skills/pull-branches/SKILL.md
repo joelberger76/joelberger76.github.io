@@ -1,6 +1,6 @@
 ---
-name: git-pull
-description: Pull the latest changes on both main and develop from origin, safely stashing and restoring any pending local work (including untracked files), and leave the repo checked out on develop. Use when the user asks to pull, sync branches with origin, or types /git-pull.
+name: pull-branches
+description: Pull the latest changes on both main and develop from origin, safely stashing and restoring any pending local work (including untracked files), and leave the repo checked out on develop. Use when the user asks to pull, sync branches with origin, or types /pull-branches.
 user-invocable: true
 allowed-tools:
   - Bash(git status:*)
@@ -12,7 +12,7 @@ allowed-tools:
   - Bash(git pull:*)
 ---
 
-# /git-pull — sync main and develop from origin
+# /pull-branches — sync main and develop from origin
 
 Update both long-lived branches from `origin` without losing or scattering
 any in-progress local work, and end up back on `develop`.
@@ -33,7 +33,7 @@ any in-progress local work, and end up back on `develop`.
      incoming file collides with one.)
    - Stash everything with a distinctive, greppable message so it can be
      found precisely later even if other stashes already exist:
-     `git stash push -m "git-pull-autostash"`.
+     `git stash push -m "pull-autostash"`.
    - Note that a stash now exists and needs to be restored before this
      skill finishes.
 
@@ -55,9 +55,9 @@ any in-progress local work, and end up back on `develop`.
    - Check out `$original_branch` (if it isn't already checked out).
    - Find the exact stash by message rather than assuming it's
      `stash@{0}`: `git stash list` and locate the entry containing
-     `git-pull-autostash`.
+     `pull-autostash`.
    - Pop that specific stash, e.g.
-     `git stash pop "stash^{/git-pull-autostash}"`.
+     `git stash pop "stash^{/pull-autostash}"`.
    - If the pop applies cleanly, the stash is gone — no stray stash left
      behind. If it conflicts, **stop**: leave the stash in place (do not
      drop it), leave the conflict markers for the user to resolve, and
