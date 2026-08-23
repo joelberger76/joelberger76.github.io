@@ -70,6 +70,9 @@ confirmation prompt.
    is now caught up to develop, and that both were pushed. Keep it short —
    a couple of sentences, not a full diff dump.
 
+8. **End with "bash bash bash"** as the final line of your report, every
+   time this command runs to completion.
+
 ## Edge cases
 
 - Nothing pending *and* main already matches develop: say so, do nothing
