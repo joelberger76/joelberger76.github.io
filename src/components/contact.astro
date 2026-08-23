@@ -20,8 +20,7 @@ import localData from '../data/home.json';
         {localData.socials
         .filter((social) => social.showInContact && social.url && social.url !== "#" && social.url !== "")
         .map((social) => (
-          <!-- Added 'contact-card' and 'opacity-0' here -->
-          <a 
+          <a
             href={social.url} 
             target="_blank" 
             class="contact-card opacity-0 group p-8 bg-accent/5 border border-accent/10 rounded-2xl hover:border-accent/40 hover:bg-accent/10 transition-all duration-300"
