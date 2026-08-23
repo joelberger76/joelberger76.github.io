@@ -1,6 +1,6 @@
 ---
-name: cmp
-description: Commit all pending changes to develop, merge develop into main, and push both branches to origin. Use when the user types /cmp.
+name: commit-merge-push
+description: Commit all pending changes to develop, merge develop into main, and push both branches to origin. Use when the user types /commit-merge-push.
 user-invocable: true
 allowed-tools:
   - Bash(git status:*)
@@ -14,13 +14,13 @@ allowed-tools:
   - Bash(git push:*)
 ---
 
-# /cmp — commit, merge, push
+# /commit-merge-push — commit, merge, push
 
 Ship the working copy: commit everything pending to `develop`, fast-forward
 `main` to match, and push both to `origin`. This command exists specifically
 so that invoking it *is* the user's explicit authorization for the merge and
 push — the project's usual "don't merge to main / don't push until told"
-rules don't apply when `/cmp` is what was typed. Nothing here needs a
+rules don't apply when `/commit-merge-push` is what was typed. Nothing here needs a
 confirmation prompt.
 
 ## Steps
