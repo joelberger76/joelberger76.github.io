@@ -16,8 +16,8 @@ allowed-tools:
 
 # /commit-merge-push — commit, merge, push
 
-Ship the working copy: commit everything pending to `develop`, fast-forward
-`main` to match, and push both to `origin`. This command exists specifically
+Ship the working copy: commit everything pending to `develop`, merge it
+into `main`, and push both to `origin`. This command exists specifically
 so that invoking it *is* the user's explicit authorization for the merge and
 push — the project's usual "don't merge to main / don't push until told"
 rules don't apply when `/commit-merge-push` is what was typed. Nothing here needs a
@@ -51,9 +51,12 @@ confirmation prompt.
 
 4. **Merge `develop` into `main`.**
    - `git checkout main`
-   - `git merge develop`
-   - This repo's history is linear, so this should fast-forward cleanly.
-     If it doesn't (diverged history, conflicts), **stop**, leave the repo
+   - `git merge --no-edit develop`
+   - This fast-forwards when `main` is an ancestor of `develop`, and
+     otherwise creates a normal "Merge branch 'develop'" commit. Both are
+     expected; some repos keep a linear history and others accumulate
+     merge commits on `main`, so a non-fast-forward merge is not an error
+     by itself. Only stop if the merge hits **conflicts**: leave the repo
      in whatever state git put it in, and report the conflict to the user
      instead of attempting to resolve it yourself.
 
