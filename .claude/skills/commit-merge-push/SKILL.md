@@ -42,7 +42,7 @@ confirmation prompt.
      etc.); if you see one, stop and ask rather than committing it.
    - Write a commit message the same way as any other commit in this repo:
      analyze the staged diff, summarize the *why* in 1-2 sentences, no em
-     dashes, end with `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
+     dashes, end with the `Co-Authored-By:` trailer naming the Claude model actually running this session (e.g. `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`; use the exact line from the session's attribution guidance if one is given, never a hardcoded model name).
      If the diff spans several unrelated changes, one summary commit
      covering all of them is fine — this command is a single-shot wrap-up,
      not a place to agonize over commit granularity.
