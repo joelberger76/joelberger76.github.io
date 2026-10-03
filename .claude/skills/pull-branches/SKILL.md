@@ -54,10 +54,12 @@ any in-progress local work, and end up back on `develop`.
 5. **Restore the stash, if one was created.**
    - Check out `$original_branch` (if it isn't already checked out).
    - Find the exact stash by message rather than assuming it's
-     `stash@{0}`: `git stash list` and locate the entry containing
-     `pull-autostash`.
-   - Pop that specific stash, e.g.
-     `git stash pop "stash^{/pull-autostash}"`.
+     `stash@{0}`, and get its `stash@{N}` reference:
+     `git stash list | grep -m1 'pull-autostash' | cut -d: -f1`.
+   - Pop that specific stash by its reference, e.g.
+     `git stash pop 'stash@{N}'`. (Don't use the
+     `stash^{/pull-autostash}` message-search syntax. `git stash pop`
+     rejects it with "is not a stash reference".)
    - If the pop applies cleanly, the stash is gone — no stray stash left
      behind. If it conflicts, **stop**: leave the stash in place (do not
      drop it), leave the conflict markers for the user to resolve, and
