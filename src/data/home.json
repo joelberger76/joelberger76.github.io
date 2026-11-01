@@ -33,7 +33,7 @@
     },
     {
       "name": "Email",
-      "url": "mailto:joelberger@gmail.com",
+      "url": "mailto:joel@joelberger.dev",
       "icon": "mdi:email",
       "showInContact": true
     }

@@ -1,0 +1,85 @@
+---
+import { Icon } from 'astro-icon/components';
+import recognitionData from '../data/recognition.json';
+
+const { speaking, awards } = recognitionData;
+---
+
+<section id="recognition" class="section-container max-w-6xl mx-auto overflow-hidden">
+  <div class="container mx-auto">
+    <h2 class="recognition-reveal text-3xl md:text-4xl font-heading font-bold text-maintext mb-8 flex items-center gap-4">
+      <span class="text-accent">/</span> Speaking & Recognition
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-4">
+        <h3 class="recognition-reveal font-mono text-xs tracking-widest uppercase text-accent/75 flex items-center gap-2">
+          <Icon name="mdi:microphone-variant" class="w-4 h-4" /> Speaking & Media
+        </h3>
+        {speaking.map((item) => (
+          <div class="recognition-reveal bg-accent/5 border border-accent/10 p-4 md:p-6 rounded-2xl hover:border-accent/40 transition-colors">
+            <span class="font-mono text-xs tracking-widest uppercase text-accent/75">{item.period}</span>
+            <h4 class="text-lg font-heading font-bold text-maintext mt-1">{item.title}</h4>
+            <p class="text-accent text-sm">
+              {item.role}, {item.host}{item.format && `, ${item.format}`}
+            </p>
+            {item.url && (
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 mt-3 text-sm font-semibold text-accent hover:underline"
+              >
+                <Icon name="mdi:play-circle-outline" class="w-4 h-4" /> Watch the video
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div class="space-y-4">
+        <h3 class="recognition-reveal font-mono text-xs tracking-widest uppercase text-accent/75 flex items-center gap-2">
+          <Icon name="mdi:trophy-outline" class="w-4 h-4" /> Awards
+        </h3>
+        {awards.map((item) => (
+          <div class="recognition-reveal bg-accent/5 border border-accent/10 p-4 md:p-6 rounded-2xl hover:border-accent/40 transition-colors">
+            <span class="font-mono text-xs tracking-widest uppercase text-accent/75">{item.period}</span>
+            <h4 class="text-lg font-heading font-bold text-maintext mt-1">{item.title}</h4>
+            <p class="text-accent text-sm">{item.organization}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recognition-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.15s;
+  }
+
+  .recognition-reveal.reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function revealRecognition() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.recognition-reveal').forEach((el) => observer.observe(el));
+  }
+
+  revealRecognition();
+  document.addEventListener('astro:after-swap', revealRecognition);
+</script>

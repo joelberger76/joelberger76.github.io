@@ -1,0 +1,40 @@
+{
+  "speaking": [
+    {
+      "role": "Guest",
+      "host": "Harness",
+      "title": "How Bread Financial Eliminated 2 A.M. Software Releases",
+      "format": "Video conversation",
+      "period": "Oct 2026",
+      "url": "https://youtu.be/jXGH4GpT3Jk"
+    },
+    {
+      "role": "Panelist",
+      "host": "Harness {unscripted}",
+      "title": "The Work Nobody Sees: Where Transformation Actually Happens",
+      "format": "",
+      "period": "Sep 2026",
+      "url": ""
+    },
+    {
+      "role": "Speaker",
+      "host": "Harness {unscripted}",
+      "title": "Shipping Smarter: Bread Financial's Journey to Release Independence",
+      "format": "",
+      "period": "Aug 2025",
+      "url": ""
+    }
+  ],
+  "awards": [
+    {
+      "title": "2023 Leadership Excellence Award",
+      "organization": "Bread Financial",
+      "period": "Jan 2024"
+    },
+    {
+      "title": "CX Hero",
+      "organization": "Bread Financial",
+      "period": "Oct 2023"
+    }
+  ]
+}
