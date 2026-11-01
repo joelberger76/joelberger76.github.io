@@ -2,6 +2,7 @@ import homeData from '../data/home.json';
 import careerData from '../data/career.json';
 import educationData from '../data/education.json';
 import projectsData from '../data/projects.json';
+import recognitionData from '../data/recognition.json';
 import skillsData from '../data/skills.json';
 
 export async function GET() {
@@ -21,6 +22,14 @@ export async function GET() {
 
   const projectsStr = projectsData
     .map((proj) => `- **${proj.title}:** ${proj.description}`)
+    .join('\n');
+
+  const speakingStr = recognitionData.speaking
+    .map((item) => `- **${item.title}:** ${item.role}, ${item.host} (${item.period})${item.url ? `, ${item.url}` : ''}`)
+    .join('\n');
+
+  const awardsStr = recognitionData.awards
+    .map((item) => `- **${item.title}:** ${item.organization} (${item.period})`)
     .join('\n');
 
   const socialsStr = homeData.socials
@@ -50,6 +59,12 @@ ${educationStr}
 
 ## Key Initiatives & Projects
 ${projectsStr}
+
+## Speaking & Media
+${speakingStr}
+
+## Awards
+${awardsStr}
 
 ## Contact & Links
 - **Website:** ${siteUrl}
